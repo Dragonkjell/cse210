@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // this is prep 2
+        // this is the prep 2
         Console.WriteLine("Hello Prep2 World!");
     }
 }
