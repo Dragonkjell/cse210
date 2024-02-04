@@ -14,13 +14,31 @@ public class PromptGenerator
 
  public string GetPrompt()
  {
-    Random randomNumber = new Random();
-    int promptIndex = randomNumber.Next(_prompt.Count);
-    return _prompt[promptIndex];
+   //  Random randomNumber = new Random();
+   //  int promptIndex = randomNumber.Next(_prompt.Count);
+   //  return _prompt[promptIndex];
+   string[] prompts = File.ReadAllLines("prompts.txt");
+
+   Random random = new Random();
+   int index = random.Next(prompts.Length);
+   
+   return prompts[index];
  }
 
  public void AddPrompt(string newPrompt)
  {
-   _prompt.Add(newPrompt);
- }
+   // _prompt.Add(newPrompt);
+   try
+   {
+      using (StreamWriter writer = File.AppendText("prompts.txt"))
+      {
+         writer.WriteLine(newPrompt);
+      }
+   }
+   catch (Exception ex)
+   {
+      Console.WriteLine($"Error adding prompt: {ex.Message}");
+   }
+}
+
 }
