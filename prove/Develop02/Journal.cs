@@ -55,6 +55,8 @@ public class Journal
                     _entries.Add(entry);
                 }
             }
+
+            Console.WriteLine($"{filename} successfully loaded.");
         }
         catch (Exception ex)
         {
