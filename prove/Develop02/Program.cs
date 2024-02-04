@@ -60,7 +60,9 @@ class Program
 
                     // add new
                 case "5":
-                
+                Console.WriteLine("Enter a new prompt: ");
+                string newPrompt = Console.ReadLine();
+                promptGenerator.AddPrompt(newPrompt);
                 break;
             }
         }
