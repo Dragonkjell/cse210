@@ -45,12 +45,12 @@ public class Journal
                     string[] parts = line.Split('|');
                     // parse the date to be the specified format
                     DateTime date;
+                    Entry entry = new Entry();
                     if (DateTime.TryParseExact(parts[0], "yyyy-MM-dd HH:mm:ss", null, System.Globalization.DateTimeStyles.None, out date))
-                    Entry entry = new Entry()
                     {
-                        _date = DateTime.Parse(parts[0]),
-                        _prompt = parts[1],
-                        _response = parts[2],
+                        entry._date = DateTime.Parse(parts[0]);
+                        entry._prompt = parts[1];
+                        entry._response = parts[2];
                     };
                     _entries.Add(entry);
                 }

@@ -7,6 +7,7 @@ class Program
     {
         // create a journal instance
         Journal journal = new Journal();
+        PromptGenerator promptGenerator = new PromptGenerator();
 
         string userChoice = "";
         while (userChoice != "6")
@@ -23,7 +24,6 @@ class Program
                     // write
                 case "1":
                 // give a prompt and save the response
-                PromptGenerator promptGenerator = new PromptGenerator();
                 string prompt = promptGenerator.GetPrompt();
                 Console.WriteLine(prompt);
                 string response = Console.ReadLine();
@@ -60,6 +60,7 @@ class Program
 
                     // add new
                 case "5":
+                
                 break;
             }
         }
