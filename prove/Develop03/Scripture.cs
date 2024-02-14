@@ -1,9 +1,21 @@
 public class Scripture
-{
-    private string _scripture = "";
 
-    public string GetScripture()
+{
+    private string _scripture;
+
+    Reference reference = new Reference();
+
+    public string ScriptureReference()
     {
-        return _scripture;
+        return reference.GetReference();
+    }
+    public string ScriptureText()
+    {
+        return reference.GetText();
+    }
+
+    public void UpdateScripture(string UpdateScripture)
+    {
+        _scripture = UpdateScripture;
     }
 }
