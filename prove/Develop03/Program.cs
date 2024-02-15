@@ -5,26 +5,22 @@ class Program
     static void Main(string[] args)
     {
         Scripture scripture = new Scripture();
-        Words words = new Words(scripture.ScriptureText());
+        Word word = new Word();
         
         Console.WriteLine(scripture.ScriptureReference());
         Console.WriteLine(scripture.ScriptureText());
         Console.WriteLine("Press enter to continue or type 'quit' to finish.");
         Console.ReadLine();
 
-        while (words.WordCount() > 0 && Console.ReadLine() != "quit")
+        while (Console.ReadLine() != "quit" && !scripture.IsCompletelyHidden())
         {
-
             Console.Clear();
 
-            words.RemoveWords();
-            scripture.UpdateScripture(words.GetUpdatedWords());
-
             Console.WriteLine(scripture.ScriptureReference());
-            words.RemoveWords();
-            words.PrintNewWords();
+            Console.WriteLine(scripture.UpdatedScripture());
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
             Console.ReadLine();
+
         }
     }
 }
