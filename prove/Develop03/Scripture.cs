@@ -4,8 +4,6 @@ using System.Linq;
 public class Scripture
 
 {
-    private string _scripture;
-
     private List<Word> _words = new List<Word>();
 
     Reference reference = new Reference();
@@ -15,6 +13,7 @@ public class Scripture
         return reference.GetReference();
     }
 
+    //constructor for no arguments
     public string ScriptureText()
     {
         string verse = "And they would have had no children; wherefore they would have remained in a state of innocence, having no joy, for they knew no misery; doing no good, for they knew no sin.\nBut behold, all things have been done in the wisdom of him who knoweth all things.\nAdam fell that men might be; and men are, that they might have joy.";
@@ -33,6 +32,26 @@ public class Scripture
         return verse;
     }
 
+    //constructor with one arguement
+    public string ScriptureText(string passedVerse)
+    {
+        string verse = passedVerse;
+
+        string[] words = verse.Split(" ");
+
+        foreach (string wordOfVerse in words)
+        {
+            Word word = new Word();
+            word.WordText = wordOfVerse;
+            word.IsHidden = false;
+
+            _words.Add(word);
+        }
+
+        return verse;
+    }
+
+    // method for updating the scripture
     public string UpdatedScripture()
     { 
         Random random = new Random();
