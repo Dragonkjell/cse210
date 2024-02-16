@@ -10,11 +10,11 @@ class Program
         Word word = new Word();
         Reference reference = new Reference();
         
-        Console.Write("Would you like to [1] enter your own scripture or [2] use the default? ");
+        Console.Write("Would you like to [1] use the default scripture or [2} enter your own?");
         string choice = Console.ReadLine();
         int choiceInt = int.Parse(choice);
 
-        if (choiceInt == 1)
+        if (choiceInt == 2)
         {
             Console.Write("Enter the book of the scripture: ");
             string book = Console.ReadLine();
@@ -33,14 +33,18 @@ class Program
             scripture.ScriptureText(verseText);
 
             Console.Clear();
+            Console.WriteLine(scripture.ScriptureReference(reference.Book, reference.Chapter, reference.Verse));
+            Console.WriteLine(scripture.UpdatedScripture());
 
         }
         else
         {
+            Console.Clear();
             Console.WriteLine(scripture.ScriptureReference());
-            Console.WriteLine(scripture.ScriptureText());
+            Console.WriteLine(scripture.UpdatedScripture());
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
         }
+
 
         while (true)
         {
