@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Concurrent;
+using System.Security.Cryptography;
 
 class Program
 {
@@ -29,10 +31,12 @@ class Program
             Console.Write("Enter the text of the verse: ");
             string verseText = Console.ReadLine();
             scripture.ScriptureText(verseText);
+
+            Console.Clear();
+
         }
         else
         {
-
             Console.WriteLine(scripture.ScriptureReference());
             Console.WriteLine(scripture.ScriptureText());
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
@@ -47,7 +51,7 @@ class Program
 
             Console.Clear();
 
-            Console.WriteLine(scripture.ScriptureReference());
+            Console.WriteLine(scripture.ScriptureReference(reference.Book, reference.Chapter, reference.Verse));
             Console.WriteLine(scripture.UpdatedScripture());
             Console.WriteLine("Press enter to continue or type 'quit' to finish.");
         }

@@ -13,6 +13,11 @@ public class Scripture
         return reference.GetReference();
     }
 
+    public string ScriptureReference(string book, string chapter, string verse)
+    {
+        return reference.GetReference(book, chapter, verse);
+    }
+
     //constructor for no arguments
     public string ScriptureText()
     {
