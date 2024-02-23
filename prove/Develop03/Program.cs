@@ -34,6 +34,7 @@ class Program
 
             Console.Clear();
             Console.WriteLine(scripture.ScriptureReference(reference.Book, reference.Chapter, reference.Verse));
+            Console.WriteLine(scripture.ScriptureText(verseText));
             Console.WriteLine(scripture.UpdatedScripture());
 
         }
