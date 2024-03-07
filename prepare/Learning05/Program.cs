@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        Shape circle = new Circle("red", 4);
+
+        Console.WriteLine(circle.GetArea());
+        Console.WriteLine(circle.GetColor());
     }
 }
